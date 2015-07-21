@@ -36,7 +36,7 @@ while true; do
         album=$(echo $moefm_json | jq -M -r ".response.playlist[${a[$i]}].wiki_title")
         clear
         printf '艺术家: %s\n曲名:   %s\n专辑:   %s\n\n[SPACE] 暂停/继续 [q] 下一曲 [Ctrl-Z] 退出\n' "$artist" "$title" "$album"
-        mpg123 -q -C "$mp3_url"
+        afplay -q  "$mp3_url"
     done
 done
 
