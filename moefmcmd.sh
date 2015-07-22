@@ -25,7 +25,7 @@ while true; do
         artist=$(echo $moefm_json | jq -M -r ".response.playlist[${a[$i]}].artist")
         album=$(echo $moefm_json | jq -M -r ".response.playlist[${a[$i]}].wiki_title")
         clear
-        printf ‘Artist: %s\nSong:   %s\nAlbum:   %s\n\n[SPACE] Pause/Continue [q] Next [Ctrl-Z] Exit\n’ "$artist" "$title" "$album"
+        printf 'Artist: %s\nSong:   %s\nAlbum:   %s\n\n[SPACE] Pause/Continue [q] Next [Ctrl-Z] Exit\n' "$artist" "$title" "$album"
         wget -O "/tmp/mo.mp3" -q "$mp3_url"
 	afplay -v 0.2 -q 1 /tmp/mo.mp3
     done
